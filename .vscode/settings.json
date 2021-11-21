@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    "tw\\..+`([^`]*)",
+    "tw\\(.*?\\).*?`([^`]*)"
+  ]
+}
