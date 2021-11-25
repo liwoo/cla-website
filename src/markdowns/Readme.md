@@ -1,3 +1,0 @@
-### Markdowns
-
-Markdowns for gatsby rendring...

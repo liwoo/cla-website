@@ -3,6 +3,13 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'strapi-typescript-tailwind-starter',
+    banner: {
+      title: 'New Frontier',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illum unde ducimus ab delectus. Amet repudiandae assumenda, praesentium nihil harum aspernatur distinctio doloribus itaque quo sapiente commodi quam exercitationem debitis.',
+      imageUrl:
+        'https://images.unsplash.com/photo-1622598453695-4fbaf151aadc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+    },
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -33,6 +40,14 @@ module.exports = {
         path: path.resolve(__dirname, 'locales'),
       },
       __key: 'locales',
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-react-i18next',
