@@ -1,8 +1,8 @@
 {
-  "name": "strapi-typescript-tailwind-starter",
+  "name": "chrisian-life-assembly",
   "version": "1.0.0",
   "private": true,
-  "description": "strapi-typescript-tailwind-starter",
+  "description": "Official Chrisital Life Assembly Website",
   "author": "Jeremiah Chienda",
   "keywords": [
     "gatsby"
@@ -19,7 +19,9 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "babel-plugin-styled-components": "^1.13.2",
+    "daisyui": "^1.21.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-manifest": "^3.8.0",

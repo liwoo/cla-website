@@ -1,23 +1,17 @@
 import React from 'react';
-import tw from 'tailwind-styled-components';
-import { Container, Row } from './layouts';
-import Logo from '../assets/logo.svg';
-import { Button } from './views';
+import { Container } from './layouts';
 
-const Banner = tw.header`
-    py-4
-    my-6
-`;
 
 export default function BannerComponent() {
   return (
-    <Banner>
-      <Container>
-        <Row>
-          <Logo className="w-32 h-32" />
-          <Button>Register for Church</Button>
-        </Row>
-      </Container>
-    </Banner>
+    <Container>
+      <div className="card rounded my-8 bg-alternate">
+        <div className="card-body text-center text-secondary py-4">
+          <div>
+            <p className="underline">There will be a fasting season for this new year starting on January 10</p>
+          </div>
+        </div>
+      </div>
+    </Container>
   );
 }
