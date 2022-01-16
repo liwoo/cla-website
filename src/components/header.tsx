@@ -11,7 +11,7 @@ const Header = tw.header`
 export default function HeaderComponent() {
   return (
     <Header>
-      <Container>
+      <Container className="fixed top-0 z-30 w-full bg-gray-100">
         <Row>
           <Logo className="h-28 w-28" />
           <button className="btn btn-primary">Register Now</button>

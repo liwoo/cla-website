@@ -5,6 +5,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next';
 import Header from '../header';
 import Banner from '../banner';
 import { LangList } from '../languages';
+import Footer from '../footer';
 
 export const LayoutContext = createContext({ windowWidth: 0 });
 
@@ -17,6 +18,7 @@ const Layout: React.FC = ({ children }) => {
       <Header />
       <Banner />
       {children}
+      <Footer />
       <p>Language Example: click any language to select</p>
       <LangList
         languages={languages}

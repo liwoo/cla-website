@@ -10,7 +10,9 @@ const PageTitle = tw.h1`
   text-xl
   font-bold
   w-3/4
+  ul:w-1/3
   mx-auto
+  my-12
 `;
 
 const Underline = tw.h1`
@@ -31,7 +33,7 @@ interface Props {
 function PageTitleComponent(props: Props) {
   return (
     <PageTitle>
-      <Trans>Welcome to CLA</Trans>
+      <Trans>{props.title}</Trans>
       <Underline>
         <div className="w-16 h-1 bg-primary" />
         <div className="w-16 h-1 bg-white" />
