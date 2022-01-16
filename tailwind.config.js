@@ -24,36 +24,33 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    require('daisyui'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require('daisyui'), require('@tailwindcss/aspect-ratio')],
   daisyui: {
     themes: [
       {
         cla: {
-          'primary': '#710071',
+          primary: '#710071',
           'primary-focus': '#530071',
           'primary-content': '#ffffff',
-          'secondary': '#1d3557',
+          secondary: '#1d3557',
           'secondary-focus': '#0d2241',
           'secondary-content': '#ffffff',
-          'accent': '#fecd31',
+          accent: '#fecd31',
           'accent-focus': '#e6c229',
           'accent-content': '#ffffff',
-          'neutral': '#3d4451',
+          neutral: '#3d4451',
           'neutral-focus': '#2a2e37',
           'neutral-content': '#ffffff',
           'base-100': '#F0F0F5',
           'base-200': '#f5f5f5',
           'base-300': '#d1d5db',
           'base-content': '#1f2937',
-          'info': '#2094f3',
-          'success': '#009485',
-          'warning': '#ff9900',
-          'error': '#ff5724',
+          info: '#2094f3',
+          success: '#009485',
+          warning: '#ff9900',
+          error: '#ff5724',
         },
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
