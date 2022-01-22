@@ -82,6 +82,7 @@ module.exports = {
         // If the Sanity GraphQL API was deployed using `--tag <name>`,
         // use `graphqlTag` to specify the tag name. Defaults to `default`.
         graphqlTag: process.env.SANITY_GRAPHQL_TAG,
+        watchMode: process.env.SANITY_WATCH_MODE === 'true',
       },
     },
   ],
