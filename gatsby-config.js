@@ -1,5 +1,11 @@
 const path = require('path');
 
+const currEnv = process.env.NODE_ENV;
+
+require('dotenv').config({
+  path: `.env${currEnv ? '.' + currEnv : ''}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'strapi-typescript-tailwind-starter',
@@ -62,6 +68,12 @@ module.exports = {
           fallbackLng: 'en',
         },
         pages: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./gatsby-graphql.ts`,
       },
     },
   ],
