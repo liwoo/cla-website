@@ -71,6 +71,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        codegen: true,
+        fileName: `./src/generated/gatsby-graphql.ts`,
+        documentPaths: [
+          './src/**/*.{ts,tsx}',
+          './node_modules/gatsby-*/**/*.js',
+        ],
+        failOnError: process.env.NODE_ENV === 'production',
+      },
+    },
+    {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
