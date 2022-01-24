@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
+import * as styles from '../components/layouts/styles.module.css';
 import { Container, Layout } from '../components/layouts';
 import HeroComponent from '../components/hero';
 import PageTitleComponent from '../components/views/page-title';
@@ -85,7 +86,7 @@ const highlightCta: HighlightsCta = {
 const findCellDescription =
   "We believe the Bible is God's word, intended to be read, studied and believed. We are a cell based Church means we meet in small groups consisting of about 8-12 people who live near each other. Our only motive is to glorify God and serve Him by serving His people, our members. Each group that gathers together studies what God has said in the Bible and how it applies to their daily lives.";
 
-function IndexPage() {
+function IndexPage(): JSX.Element {
   return (
     <Layout>
       <HeroComponent />
@@ -97,7 +98,7 @@ function IndexPage() {
         {highlighs.map((highlight) => (
           <HighlightCard key={highlight.title} {...highlight} />
         ))}
-        <div className="lg:col-span-2 col-start-1">
+        <div className="my-8 lg-my-2 lg:col-span-2 col-start-1">
           <h2 className="flex items-center my-2 font-bold gap-x-2 text-primary">
             {highlightCta.title} &#8594;
           </h2>
@@ -136,14 +137,14 @@ function IndexPage() {
               />
             </label>
           </div>
-          <button className="btn">
+          <button className="btn col-span-2 md:col-span-1">
             <Trans>Join Cell</Trans>
           </button>
         </MiniContainer>
       </Container>
       <Container>
         <PageTitleComponent title="News and Updates" />
-        <div className="px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xxl:gap-32">
+        <div className="px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xxl:gap-32">
           {newsThumbs.map((news) => (
             <NewsThumbnail key={news.title} {...news} />
           ))}
@@ -153,7 +154,12 @@ function IndexPage() {
   );
 }
 
-function NewsThumbnail({ title, description, image, date }: NewsThumb) {
+function NewsThumbnail({
+  title,
+  description,
+  image,
+  date,
+}: NewsThumb): JSX.Element {
   return (
     <div className="rounded-lg shadow-xl card image-full no-bg">
       <figure className="aspect-w-12 aspect-h-10">
@@ -192,7 +198,7 @@ function NewsThumbnail({ title, description, image, date }: NewsThumb) {
   );
 }
 
-function HighlightCard({ title, description, image }: Highlight) {
+function HighlightCard({ title, description, image }: Highlight): JSX.Element {
   return (
     <div className="my-2 bg-white cursor-pointer hover:shadow-md transition ease-in delay-150 card card-side card-bordered">
       <div className="flex-auto w-1/4">
@@ -203,7 +209,7 @@ function HighlightCard({ title, description, image }: Highlight) {
       <div className="justify-center flex-auto w-3/4 py-2 mx-6 card-body">
         <h2 className="card-title">{title}</h2>
         <div className="flex items-end gap-x-2">
-          <p className="clamped">{description}</p>
+          <p className={styles.clamped}>{description}</p>
           &#8594;
         </div>
       </div>
