@@ -1,0 +1,12 @@
+.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .clamped {
+    -webkit-line-clamp: 2;
+  }
+}
