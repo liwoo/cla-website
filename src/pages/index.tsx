@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import * as styles from '../components/layouts/styles.module.css';
 import { Container, Layout } from '../components/layouts';
 import HeroComponent from '../components/hero';
 import PageTitleComponent from '../components/views/page-title';
@@ -66,7 +67,7 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
         {highlighs.map((highlight) => (
           <HighlightCard key={highlight.title} {...highlight} />
         ))}
-        <div className="lg:col-span-2 col-start-1">
+        <div className="my-8 lg-my-2 lg:col-span-2 col-start-1">
           <h2 className="flex items-center my-2 font-bold gap-x-2 text-primary">
             {highlightCta.title} &#8594;
           </h2>
@@ -105,7 +106,7 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
               />
             </label>
           </div>
-          <button className="btn">
+          <button className="btn col-span-2 md:col-span-1">
             <Trans>Join Cell</Trans>
           </button>
         </MiniContainer>
@@ -129,7 +130,7 @@ function HighlightCard({ title, description, image }: Highlight): JSX.Element {
       <div className="justify-center flex-auto w-3/4 py-2 mx-6 card-body">
         <h2 className="card-title">{title}</h2>
         <div className="flex items-end gap-x-2">
-          <p className="clamped">{description}</p>
+          <p className={styles.clamped}>{description}</p>
           &#8594;
         </div>
       </div>
