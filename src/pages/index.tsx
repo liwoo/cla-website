@@ -1,48 +1,17 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { Container, Layout } from '../components/layouts';
 import HeroComponent from '../components/hero';
 import PageTitleComponent from '../components/views/page-title';
 import { Trans } from 'gatsby-plugin-react-i18next';
 import { MiniContainer } from '../components/layouts/mini-container';
-import { formatDate } from '../utils/format-date';
+import { News } from '../components/views/news';
 
 type Highlight = {
   title: string;
   description: string;
   image: string;
 };
-
-type NewsThumb = {
-  title: string;
-  description: string;
-  image: string;
-  date: string;
-};
-
-const newsThumbs: NewsThumb[] = [
-  {
-    title: 'News 1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.',
-    image: 'https://picsum.photos/id/1005/400/250',
-    date: '2020-01-01',
-  },
-  {
-    title: 'News 2',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.',
-    image: 'https://picsum.photos/id/1005/400/250',
-    date: '2020-01-01',
-  },
-  {
-    title: 'News 3',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.',
-    image: 'https://picsum.photos/id/1005/400/250',
-    date: '2020-01-01',
-  },
-];
 
 const highlighs: Highlight[] = [
   {
@@ -85,7 +54,7 @@ const highlightCta: HighlightsCta = {
 const findCellDescription =
   "We believe the Bible is God's word, intended to be read, studied and believed. We are a cell based Church means we meet in small groups consisting of about 8-12 people who live near each other. Our only motive is to glorify God and serve Him by serving His people, our members. Each group that gathers together studies what God has said in the Bible and how it applies to their daily lives.";
 
-function IndexPage(): JSX.Element {
+const IndexPage: React.FC<PageProps> = (): JSX.Element => {
   return (
     <Layout>
       <HeroComponent />
@@ -143,59 +112,11 @@ function IndexPage(): JSX.Element {
       </Container>
       <Container>
         <PageTitleComponent title="News and Updates" />
-        <div className="px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xxl:gap-32">
-          {newsThumbs.map((news) => (
-            <NewsThumbnail key={news.title} {...news} />
-          ))}
-        </div>
+        <News />
       </Container>
     </Layout>
   );
-}
-
-function NewsThumbnail({
-  title,
-  description,
-  image,
-  date,
-}: NewsThumb): JSX.Element {
-  return (
-    <div className="rounded-lg shadow-xl card image-full no-bg">
-      <figure className="aspect-w-12 aspect-h-10">
-        <img src={image} alt={title} />
-      </figure>
-      <div className="justify-end card-body">
-        <h2 className="card-title">{title}</h2>
-        <p className="-my-2 text-sm">{description}</p>
-        <div className="card-actions">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-4 h-4"
-            viewBox="0 0 28.102 30.891"
-          >
-            <g
-              data-name="Icon feather-calendar"
-              fill="none"
-              stroke="#fff"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="3"
-            >
-              <path
-                data-name="Path 25"
-                d="M4.289 4.289h19.524A2.789 2.789 0 0 1 26.6 7.078v19.524a2.789 2.789 0 0 1-2.787 2.787H4.289A2.789 2.789 0 0 1 1.5 26.602V7.078a2.789 2.789 0 0 1 2.789-2.789Z"
-              />
-              <path data-name="Path 26" d="M19.629 1.5v5.578" />
-              <path data-name="Path 27" d="M8.473 1.5v5.578" />
-              <path data-name="Path 28" d="M1.5 12.656h25.1" />
-            </g>
-          </svg>
-          {formatDate(date)}
-        </div>
-      </div>
-    </div>
-  );
-}
+};
 
 function HighlightCard({ title, description, image }: Highlight): JSX.Element {
   return (
