@@ -6,7 +6,7 @@ import { AllSanityNewsQuery, SanityNews } from '../../generated/gatsby-graphql';
 
 export function News(): JSX.Element {
   return (
-    <StaticQuery
+    <StaticQuery<GatsbyTypes.AllSanityNewsQuery>
       query={graphql`
         query AllSanityNews {
           allSanityNews(limit: 6) {
