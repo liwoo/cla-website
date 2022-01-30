@@ -6,7 +6,7 @@ import HeroComponent from '../components/hero';
 import PageTitleComponent from '../components/views/page-title';
 import { Trans } from 'gatsby-plugin-react-i18next';
 import { MiniContainer } from '../components/layouts/mini-container';
-import { News } from '../components/views/news';
+import { NewsSection } from '../components/views/news-section';
 
 type Highlight = {
   title: string;
@@ -113,7 +113,7 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
       </Container>
       <Container>
         <PageTitleComponent title="News and Updates" />
-        <News />
+        <NewsSection />
       </Container>
     </Layout>
   );

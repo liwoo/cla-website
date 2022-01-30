@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { formatDate } from '../utils/format-date';
-import { SanityNews } from '../generated/gatsby-graphql';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export function NewsThumbnail({
   title,
@@ -9,7 +9,7 @@ export function NewsThumbnail({
   mainImage,
   date,
 }: Pick<
-  SanityNews,
+  GatsbyTypes.SanityNews,
   'title' | 'description' | 'mainImage' | 'date'
 >): JSX.Element {
   title = title ? title : '';
@@ -18,6 +18,7 @@ export function NewsThumbnail({
     <div className="rounded-lg shadow-xl card image-full no-bg">
       {mainImage ? (
         <figure className="aspect-w-12 aspect-h-10">
+          <GatsbyImage alt={title} image={mainImage.asset?.gatsbyImageData!} />
           <img src={mainImage.asset?.url as string} alt={title} />
         </figure>
       ) : (
@@ -49,7 +50,7 @@ export function NewsThumbnail({
               <path data-name="Path 28" d="M1.5 12.656h25.1" />
             </g>
           </svg>
-          {formatDate(date)}
+          {formatDate(date!)}
         </div>
       </div>
     </div>
