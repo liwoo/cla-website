@@ -111,10 +111,7 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
           </button>
         </MiniContainer>
       </Container>
-      <Container>
-        <PageTitleComponent title="News and Updates" />
-        <NewsSection />
-      </Container>
+      <NewsSection />
     </Layout>
   );
 };
