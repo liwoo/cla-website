@@ -6,15 +6,14 @@ import { NewsThumbnail } from '../news-thumbnail';
 import PageTitleComponent from '../views/page-title';
 
 export function NewsSection(): JSX.Element {
-  const data = useStaticQuery<GatsbyTypes.AllSanityNewsQuery>(graphql`
-    query AllSanityNews {
-      allSanityNews(limit: 6) {
+  const data = useStaticQuery<GatsbyTypes.AllNewsQuery>(graphql`
+    query AllNews {
+      allSanityNews(limit: 6, sort: { fields: _createdAt, order: DESC }) {
         nodes {
           title
           description
           mainImage {
             asset {
-              url
               gatsbyImageData(
                 width: 200
                 height: 200

@@ -7,50 +7,51 @@ import PageTitleComponent from '../components/views/page-title';
 import { Trans } from 'gatsby-plugin-react-i18next';
 import { MiniContainer } from '../components/layouts/mini-container';
 import { NewsSection } from '../components/views/news-section';
+import { HighlightsSection } from '../components/views/highlights-section';
 
-type Highlight = {
-  title: string;
-  description: string;
-  image: string;
-};
+// type Highlight = {
+//   title: string;
+//   description: string;
+//   image: string;
+// };
 
-const highlighs: Highlight[] = [
-  {
-    title: 'Become a Member',
-    description:
-      'We invite you to become a member of our church. For information, please contact the church office.',
-    image: 'https://picsum.photos/id/1005/400/250',
-  },
-  {
-    title: "Children's Church",
-    description:
-      "It's important that every week they hear about Jesus and learn how to live as a follower of Jesus.",
-    image: 'https://picsum.photos/id/1005/400/250',
-  },
-  {
-    title: 'Become a Volunteer',
-    description:
-      'If you love the people at your church and would like to serve in a fun and rewarding way, then we want you to become a volunteer at our church!',
-    image: 'https://picsum.photos/id/1005/400/250',
-  },
-  {
-    title: 'Just Visting',
-    description:
-      "So, you're visiting ? Well, we're here to help IF you'd like. Our mission is to do everything that we can to make your visit with us a place where you will want to return again and again.",
-    image: 'https://picsum.photos/id/1005/400/250',
-  },
-];
+// const highlighs: Highlight[] = [
+//   {
+//     title: 'Become a Member',
+//     description:
+//       'We invite you to become a member of our church. For information, please contact the church office.',
+//     image: 'https://picsum.photos/id/1005/400/250',
+//   },
+//   {
+//     title: "Children's Church",
+//     description:
+//       "It's important that every week they hear about Jesus and learn how to live as a follower of Jesus.",
+//     image: 'https://picsum.photos/id/1005/400/250',
+//   },
+//   {
+//     title: 'Become a Volunteer',
+//     description:
+//       'If you love the people at your church and would like to serve in a fun and rewarding way, then we want you to become a volunteer at our church!',
+//     image: 'https://picsum.photos/id/1005/400/250',
+//   },
+//   {
+//     title: 'Just Visting',
+//     description:
+//       "So, you're visiting ? Well, we're here to help IF you'd like. Our mission is to do everything that we can to make your visit with us a place where you will want to return again and again.",
+//     image: 'https://picsum.photos/id/1005/400/250',
+//   },
+// ];
 
-type HighlightsCta = {
-  title: string;
-  description: string;
-};
+// type HighlightsCta = {
+//   title: string;
+//   description: string;
+// };
 
-const highlightCta: HighlightsCta = {
-  title: 'Become a Christian',
-  description:
-    'In order to become a Christian, you have to have faith in God, repent your sins, and confess/confess all of your sins to God. The Bible says "For with the heart a person believes and thus is justified, and with the mouth he confesses and thus is saved" (Romans 10:10).',
-};
+// const highlightCta: HighlightsCta = {
+//   title: 'Become a Christian',
+//   description:
+//     'In order to become a Christian, you have to have faith in God, repent your sins, and confess/confess all of your sins to God. The Bible says "For with the heart a person believes and thus is justified, and with the mouth he confesses and thus is saved" (Romans 10:10).',
+// };
 
 const findCellDescription =
   "We believe the Bible is God's word, intended to be read, studied and believed. We are a cell based Church means we meet in small groups consisting of about 8-12 people who live near each other. Our only motive is to glorify God and serve Him by serving His people, our members. Each group that gathers together studies what God has said in the Bible and how it applies to their daily lives.";
@@ -63,7 +64,8 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
         title="Welcome to CLA"
         subtitle="Welcome to CLA Subtitle"
       />
-      <Container className="my-8 grid grid-cols-1 lg:grid-cols-2 ul:grid-cols-3 lg:gap-x-12 ul:grid-rows-3">
+      <HighlightsSection />
+      {/* <Container className="my-8 grid grid-cols-1 lg:grid-cols-2 ul:grid-cols-3 lg:gap-x-12 ul:grid-rows-3">
         {highlighs.map((highlight) => (
           <HighlightCard key={highlight.title} {...highlight} />
         ))}
@@ -80,7 +82,7 @@ const IndexPage: React.FC<PageProps> = (): JSX.Element => {
             alt="Church Building"
           />
         </figure>
-      </Container>
+      </Container> */}
       <Container className="p-2 bg-base-100">
         <PageTitleComponent title="Find Cell" />
         <MiniContainer className="mb-12 grid grid-cols-2 lg:grid-cols-3 gap-x-20">

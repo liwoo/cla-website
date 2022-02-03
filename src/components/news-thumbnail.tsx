@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { formatDate } from '../utils/format-date';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 export function NewsThumbnail({
   title,
@@ -12,14 +12,14 @@ export function NewsThumbnail({
   GatsbyTypes.SanityNews,
   'title' | 'description' | 'mainImage' | 'date'
 >): JSX.Element {
-  title = title ? title : '';
-
   return (
     <div className="rounded-lg shadow-xl card image-full no-bg">
-      {mainImage ? (
+      {mainImage?.asset?.gatsbyImageData ? (
         <figure className="aspect-w-12 aspect-h-10">
-          <GatsbyImage alt={title} image={mainImage.asset?.gatsbyImageData!} />
-          <img src={mainImage.asset?.url as string} alt={title} />
+          <GatsbyImage
+            alt={title as string}
+            image={mainImage.asset?.gatsbyImageData}
+          />
         </figure>
       ) : (
         ''
