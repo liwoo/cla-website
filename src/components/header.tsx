@@ -8,7 +8,7 @@ const Header = tw.header`
     py-4
 `;
 
-export default function HeaderComponent() {
+export default function HeaderComponent(): JSX.Element {
   return (
     <Header>
       <Container className="fixed top-0 z-30 w-full bg-gray-100">
