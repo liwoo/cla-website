@@ -3,7 +3,7 @@ import { Trans } from 'gatsby-plugin-react-i18next';
 import tw from 'tailwind-styled-components';
 import { graphql } from 'gatsby';
 
-const PageTitle = tw.h1`
+const PageTitle = tw.div`
   text-black
   font-apple-system
   text-center
