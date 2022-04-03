@@ -8,6 +8,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
+    siteUrl: process.env.SITE_URL,
     title: 'strapi-typescript-tailwind-starter',
     banner: {
       title: 'New Frontier',
