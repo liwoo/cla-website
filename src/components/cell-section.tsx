@@ -42,7 +42,7 @@ export default function CellSection(): JSX.Element {
         <img
           src={data.allSanityCallToAction.nodes[0].coverImage?.asset.url}
           alt="Find Cell Near You"
-          className="hidden object-cover h-full rounded-lg row-span-3 lg:block"
+          className="hidden object-cover rounded-lg row-span-3 lg:block"
         />
         <p className="col-span-2">{data.allSanityCallToAction.nodes[0].description}</p>
         <div className="flex flex-col items-center my-4 mb-1 col-span-2 md:gap-x-4 md:flex-row form-control">
