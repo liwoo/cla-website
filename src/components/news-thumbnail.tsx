@@ -5,12 +5,11 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 export function NewsThumbnail({
   title,
-  description,
   mainImage,
   date,
 }: Pick<
   GatsbyTypes.SanityNews,
-  'title' | 'description' | 'mainImage' | 'date'
+  'title' | 'mainImage' | 'date'
 >): JSX.Element {
   title = title ? title : '';
 
@@ -19,14 +18,12 @@ export function NewsThumbnail({
       {mainImage ? (
         <figure className="aspect-w-12 aspect-h-10">
           <GatsbyImage alt={title} image={mainImage.asset?.gatsbyImageData!} />
-          <img src={mainImage.asset?.url as string} alt={title} />
         </figure>
       ) : (
         ''
       )}
       <div className="justify-end card-body">
         <h2 className="card-title">{title}</h2>
-        <p className="-my-2 text-sm">{description}</p>
         <div className="card-actions">
           <svg
             xmlns="http://www.w3.org/2000/svg"
