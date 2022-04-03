@@ -63,7 +63,7 @@ function HighlightCard({ title, description, coverImage }: Pick<GatsbyTypes.Sani
     <div className="my-2 bg-white cursor-pointer hover:shadow-md transition ease-in delay-150 card card-side card-bordered">
       <div className="flex-auto w-1/4">
         <figure className="m-4 aspect-w-4 aspect-h-4">
-          <GatsbyImage className="absolute rounded-lg" alt={coverImage?.asset?.altText ?? "Call to Action"} image={coverImage?.asset?.gatsbyImageData!} />
+          <GatsbyImage style={{ position: 'absolute' }} className="absolute rounded-lg" alt={coverImage?.asset?.altText ?? "Call to Action"} image={coverImage?.asset?.gatsbyImageData!} />
         </figure>
       </div>
       <div className="justify-center flex-auto w-3/4 py-2 mx-6 card-body">

@@ -17,7 +17,7 @@ export function NewsThumbnail({
     <div className="rounded-lg shadow-xl card image-full no-bg">
       {mainImage ? (
         <figure className="aspect-w-12 aspect-h-10">
-          <GatsbyImage alt={title} image={mainImage.asset?.gatsbyImageData!} className="absolute" />
+          <GatsbyImage alt={title} style={{ position: "absolute" }} image={mainImage.asset?.gatsbyImageData!} className="absolute" />
         </figure>
       ) : (
         ''
