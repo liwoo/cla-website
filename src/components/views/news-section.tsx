@@ -8,7 +8,7 @@ import PageTitleComponent from '../views/page-title';
 export function NewsSection(): JSX.Element {
   const data = useStaticQuery<GatsbyTypes.AllSanityPostQuery>(graphql`
     query AllSanityPost {
-      allSanityPost(limit: 3) {
+        allSanityPost(filter: {postType: {eq: "Devotional"}}, sort: {fields: publishedAt, order: DESC}, limit: 3) {
         nodes {
           title
           publishedAt
