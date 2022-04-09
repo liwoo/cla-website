@@ -13,6 +13,9 @@ module.exports = {
         xxl: '1800px',
         xxxl: '2800px',
       },
+      spacing: {
+        '120': '64rem'
+      },
       colors: {
         primary: '#710071',
         alternate: '#FECD04',
