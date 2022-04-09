@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Container } from './layouts/container';
 
@@ -33,9 +34,10 @@ function HeroComponent(): JSX.Element {
     <Container>
       <div className="my-8 mt-4 rounded-lg card image-full">
         <figure className="aspect-w-16 aspect-h-9 lg:aspect-h-7">
-          <img
-            src={sermon.mainImage?.asset?.url}
-            alt="Pastor Preaching"
+          <GatsbyImage
+            style={{ position: 'absolute' }}
+            image={sermon.mainImage?.asset?.gatsbyImageData!}
+            alt={sermon?.title ?? ""}
           />
         </figure>
         <div className="flex-col justify-between px-8 py-12 card-body">

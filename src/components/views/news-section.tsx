@@ -11,6 +11,9 @@ export function NewsSection(): JSX.Element {
         allSanityPost(filter: {postType: {eq: "Devotional"}}, sort: {fields: publishedAt, order: DESC}, limit: 3) {
         nodes {
           title
+          slug {
+            current
+          }
           publishedAt
           mainImage {
             asset {
@@ -37,7 +40,8 @@ export function NewsSection(): JSX.Element {
             <NewsThumbnail
               title={news.title}
               mainImage={news.mainImage}
-              date={news.publishedAt}
+              publishedAt={news.publishedAt}
+              slug={news.slug}
               key={index}
             />
           )
