@@ -3,7 +3,7 @@ import { Trans } from 'gatsby-plugin-react-i18next';
 import tw from 'tailwind-styled-components';
 import { graphql } from 'gatsby';
 
-const PageTitle = tw.h1`
+const PageTitle = tw.div`
   text-black
   font-apple-system
   text-center
@@ -30,7 +30,7 @@ interface Props {
   subtitle?: string;
 }
 
-function PageTitleComponent(props: Props) {
+function PageTitleComponent(props: Props): JSX.Element {
   return (
     <PageTitle>
       <Trans>{props.title}</Trans>

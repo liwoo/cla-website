@@ -8,8 +8,15 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://cla.dartsmw.com',
     title: 'Christian Life Assembly',
+    siteUrl: process.env.SITE_URL,
+    banner: {
+      title: 'New Frontier',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi illum unde ducimus ab delectus. Amet repudiandae assumenda, praesentium nihil harum aspernatur distinctio doloribus itaque quo sapiente commodi quam exercitationem debitis.',
+      imageUrl:
+        'https://images.unsplash.com/photo-1622598453695-4fbaf151aadc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
+    },
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -17,6 +24,9 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -65,19 +75,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
+      resolve: 'gatsby-plugin-typegen',
       options: {
-        codegen: true,
-        fileName: `./src/generated/gatsby-graphql.ts`,
-        documentPaths: [
-          './src/**/*.{ts,tsx}',
-          './node_modules/gatsby-*/**/*.js',
-        ],
-        failOnError: process.env.NODE_ENV === 'production',
+        outputPath: './src/generated/gatsby-graphql.ts',
       },
     },
     {
-      resolve: `gatsby-source-sanity`,
+      resolve: 'gatsby-source-sanity',
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,

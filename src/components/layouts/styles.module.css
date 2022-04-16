@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 
+
 @media (min-width: 600px) {
   .clamped {
     -webkit-line-clamp: 2;
