@@ -15,7 +15,7 @@ export default function Post(props: {
         <GatsbyImage
           objectPosition="center top"
           alt={props.data.sanityPost?.title ?? 'Post Image'}
-          className="w-full aspect-w-16 aspect-h-9 lg:aspect-h-7"
+          className="w-full aspect-w-16 aspect-h-9 lg:aspect-h-10"
           image={props.data.sanityPost!.mainImage!.asset!.gatsbyImageData!}
         />
         <h1 className="mt-8 text-3xl font-bold">
@@ -32,17 +32,22 @@ export default function Post(props: {
               </div>
             </div>
             <p>
-              <span className="hidden md:inline">Written</span> by{' '}
-              <strong>{props.data.sanityPost?.author?.name}</strong>
+              by <strong>{props.data.sanityPost?.author?.name}</strong>
             </p>
           </div>
           <p>{humanReadableDate(props.data.sanityPost?.publishedAt!)}</p>
         </div>
         <PortableText
+          projectId={process.env.SANITY_PROJECT_ID}
+          dataset={process.env.SANITY_DATASET}
           content={props.data.sanityPost?._rawBody!}
+          imageOptions={{ w: 1600, h: 1024, fit: 'min' }}
           serializers={{
-            normal: (props) => (
+            normal: (props: unknown) => (
               <p className="my-8 text-xl leading-8" {...props} />
+            ),
+            blockquote: (props: unknown) => (
+              <blockquote className="my-8 text-xl" {...props} />
             ),
           }}
         />
@@ -54,7 +59,6 @@ export default function Post(props: {
 export function humanReadableDate(date: string): string {
   const d = new Date(date);
   return `${d.toLocaleDateString('en-US', {
-    weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
