@@ -38,8 +38,8 @@ export default function Post(props: {
           <p>{humanReadableDate(props.data.sanityPost?.publishedAt!)}</p>
         </div>
         <PortableText
-          projectId={process.env.SANITY_PROJECT_ID}
-          dataset={process.env.SANITY_DATASET}
+          projectId={process.env.GATSBY_SANITY_PROJECT_ID}
+          dataset={process.env.GATSBY_SANITY_DATASET}
           content={props.data.sanityPost?._rawBody!}
           imageOptions={{ w: 1600, h: 1024, fit: 'min' }}
           serializers={{
