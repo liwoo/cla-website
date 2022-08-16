@@ -10,7 +10,6 @@ const PageTitle = tw.div`
   text-xl
   font-bold
   w-3/4
-  ul:w-1/3
   mx-auto
   my-12
 `;
@@ -28,12 +27,13 @@ const Subtitle = tw.p`
 interface Props {
   title: string;
   subtitle?: string;
+  isLarge?: boolean;
 }
 
 function PageTitleComponent(props: Props): JSX.Element {
   return (
     <PageTitle>
-      <Trans>{props.title}</Trans>
+      <Trans><p className="text-4xl">{props.title}</p></Trans>
       <Underline>
         <div className="w-16 h-1 bg-primary" />
         <div className="w-16 h-1 bg-white" />

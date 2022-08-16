@@ -6,8 +6,6 @@ import { NewsSection } from '../components/views/news-section';
 import HighlightSection from '../components/highlight-section';
 import CellSection from '../components/cell-section';
 
-
-
 const IndexPage: React.FC<PageProps> = (): JSX.Element => {
   return (
     <Layout>
