@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Container } from './layouts/container';
@@ -25,7 +25,7 @@ function HeroComponent(): JSX.Element {
 			}
 		}
 	}
-	    allSanityNotices(sort: {fields: _createdAt, order: DESC}, limit: 1) {
+	    allSanityNotices(sort: {fields: _createdAt, order: DESC}, limit: 2) {
 		    nodes {
 			    title
           link
@@ -44,20 +44,22 @@ function HeroComponent(): JSX.Element {
 
 
   const sermon = data.allSanitySermon.nodes[0];
-  const notice = data.allSanityNotices.nodes[0];
-  return sermon && (
+  const notice = data.allSanityNotices.nodes[1];
+  return sermon && notice && (
     <Container>
       <div className="flex flex-row w-full gap-x-4">
-        <div className="hidden my-8 mt-4 rounded-lg shadow-xl bg-base-200 xl:w-1/3 card card-compact xl:block">
-          <figure className="aspect-w-9 aspect-h-10">
-            <GatsbyImage
-              image={notice.coverImage?.asset?.gatsbyImageData!}
-              alt={notice?.title ?? ""}
-            />
-          </figure>
-          <div className="card-body">
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-          </div>
+        <div className="hidden my-8 mt-4 rounded-lg shadow hover:shadow-xl transition-all bg-base-200 xl:w-1/3 card xl:block">
+          <Link to={`${notice.link}`} className="p-0">
+            <figure className="aspect-w-9 aspect-h-10">
+              <GatsbyImage
+                image={notice.coverImage?.asset?.gatsbyImageData!}
+                alt={notice?.title ?? ""}
+              />
+            </figure>
+            <div className="card-body">
+              <p className="text-xl">{notice.title}</p>
+            </div>
+          </Link>
         </div>
         <div className="w-full my-8 mt-4 rounded-lg xl:w-2/3 card image-full">
           <figure className="aspect-w-16 aspect-h-9 xl:aspect-h-10">
