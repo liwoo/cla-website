@@ -52,6 +52,7 @@ function HeroComponent(): JSX.Element {
           <Link to={`${notice.link}`} className="p-0">
             <figure className="aspect-w-9 aspect-h-10">
               <GatsbyImage
+                style={{ position: 'absolute' }}
                 image={notice.coverImage?.asset?.gatsbyImageData!}
                 alt={notice?.title ?? ""}
               />
@@ -64,6 +65,7 @@ function HeroComponent(): JSX.Element {
         <div className="w-full my-8 mt-4 rounded-lg xl:w-2/3 card image-full">
           <figure className="aspect-w-16 aspect-h-9 xl:aspect-h-10">
             <GatsbyImage
+              style={{ position: 'absolute' }}
               image={sermon.mainImage?.asset?.gatsbyImageData!}
               alt={sermon?.title ?? ""}
             />
