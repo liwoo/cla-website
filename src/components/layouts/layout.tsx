@@ -2,7 +2,6 @@ import React, { useState, createContext } from 'react';
 
 // import { SEO } from '../seo';
 import Header from '../header';
-import Banner from '../banner';
 import Footer from '../footer';
 
 export const LayoutContext = createContext({ windowWidth: 0 });
@@ -13,8 +12,9 @@ const Layout: React.FC = ({ children }) => {
   return (
     <LayoutContext.Provider value={{ windowWidth }}>
       <Header />
-      <Banner />
-      {children}
+      <div className="mt-32">
+        {children}
+      </div>
       <Footer />
     </LayoutContext.Provider>
   );

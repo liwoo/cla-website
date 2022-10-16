@@ -5,10 +5,12 @@ import HeroComponent from '../components/hero';
 import { NewsSection } from '../components/views/news-section';
 import HighlightSection from '../components/highlight-section';
 import CellSection from '../components/cell-section';
+import Banner from '../components/banner';
 
 const IndexPage: React.FC<PageProps> = (): JSX.Element => {
   return (
     <Layout>
+      <Banner />
       <HeroComponent />
       <HighlightSection />
       <CellSection />

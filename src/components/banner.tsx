@@ -20,7 +20,7 @@ export default function BannerComponent(): JSX.Element {
   return <>
     {
       data.allSanityNotices.nodes.length > 0 ? (
-        <Container className="mt-24">
+        <Container className="-mt-8">
           <Link to={data.allSanityNotices.nodes[0].link as string}>
             <label htmlFor={BANNER_MODAL_ID} className="my-2 rounded cursor-pointer card bg-alternate">
               <div className="py-4 text-center card-body text-secondary">
