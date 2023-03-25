@@ -150,12 +150,7 @@ const socialMedia: SocialMedia[] = [
 function Footer(): JSX.Element {
   return (
     <Container className="mt-20 text-white bg-secondary">
-      <h2 className="pt-8 text-2xl text-center">
-        <Trans>Footer Title</Trans>
-        <p className="text-sm">
-          <Trans>Footer Description</Trans>
-        </p>
-      </h2>
+
       <footer className="p-8 text-white footer bg-secondary">
         <div className="text-sm">
           {splitParagraphs(about).map((par, key) => (
